@@ -1,0 +1,44 @@
+---
+title: "Police Shootings"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(ggplot2)
+library(gridExtra)
+library(dplyr)
+library(viridis)
+library(readr)
+```
+
+
+```{r}
+police = read_csv("police_killings_cleaned.csv")
+ggplot(police) +
+  geom_bar(aes(x = raceethnicity))
+```
+
+```{r}
+ggplot(police) + 
+  geom_bar(aes(x = gender))
+```
+
+```{r}
+ggplot(police) + 
+  geom_bar(aes(x = age))
+```
+
+MOst police shootng victims are men, most are White, Black, and Hispanic. Many are young.
+
+```{r}
+ggplot(police) + 
+  geom_bar(aes(x = cause))
+```
+
+Almost all are gunshot victims.
+
+
